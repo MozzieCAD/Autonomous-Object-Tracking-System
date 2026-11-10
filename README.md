@@ -1,6 +1,6 @@
 # Autonomous Object Tracking System
 
-**Status:** Planning and initial mechanical design — no physical prototype or validated tracking results yet.
+**Status:** Initial base plate CAD model completed and uploaded; dimensional verification, servo selection, fabrication, and tracking tests remain pending.
 
 ## Overview
 An independent mechanical engineering and robotics project to design, fabricate, and evaluate a low-cost desktop, two-axis pan/tilt object-tracking platform. A camera will detect a moving object, a host computer will calculate tracking error, and a Raspberry Pi Pico will command servo movement. Initial demonstrations will use a camera and/or LED indicator rather than a laser.
@@ -46,7 +46,8 @@ The servos will use a suitable external regulated power supply, with a common gr
 
 ## Development roadmap
 - [ ] Define measurable requirements and select camera/servo specifications
-- [ ] Design initial base and pan/tilt components in Fusion 360
+- [x] Create and export initial base plate CAD model (Fusion 360 and STEP AP242)
+- [ ] Design pan/tilt components and servo mounting geometry in Fusion 360
 - [ ] Verify clearances, travel limits, and actuator loading
 - [ ] Fabricate and assemble first prototype
 - [ ] Demonstrate manual pan/tilt control
@@ -55,7 +56,9 @@ The servos will use a suitable external regulated power supply, with a common gr
 - [ ] Publish final CAD, drawings, test data, and demonstration
 
 ## Current progress
-Repository initialized. Initial mechanical design is the next milestone. No CAD files, hardware assembly, or test results have been completed or uploaded yet.
+**Milestone 1 — Initial base plate CAD (November 10, 2026):** Modeled a rounded rectangular base plate with four through-holes in Autodesk Fusion 360. Uploaded the editable `CAD/AOTS_Base_Plate_v1.f3d` design and `CAD/AOTS_Base_Plate_v1.step` neutral CAD export (STEP AP242). This is an initial design iteration, not a validated or manufactured part. Exact dimensions, mounting-hole locations, servo fit, and manufacturability still require verification.
+
+**Next milestone:** Select a pan servo, confirm its mounting dimensions and loading requirements, and design the mating servo bracket. No physical prototype or tracking performance results are available yet.
 
 ## Documentation principles
 Design files and test results will be labeled by revision. Planned features will not be presented as completed work. Only original work or files approved for public sharing will be published.
