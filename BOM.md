@@ -18,7 +18,7 @@ This document records the components selected for the initial two-axis camera-tr
 | AOTS-006 | Jumper wires | ELEGOO 120-piece Dupont jumper assortment | 1 kit | Selected | Confirm suitable connector genders/lengths |
 | AOTS-007 | Fasteners | Fgruh 1,760-piece metric screw/nut assortment | 1 kit | Selected | Final thread sizes and lengths depend on CAD |
 | AOTS-008 | Servo extensions | Apex RC 150 mm 3-pin servo extension cables | 5-pack | Selected | Check cable reach during assembly |
-| AOTS-009 | Camera | Arducam B0196 / IMX219 USB UVC camera module (proposed; verify exact Amazon variant) | 1 | **Proposed replacement — not yet ordered** | Amazon: https://www.amazon.com/dp/B07YHK63DS ; confirm USB UVC rather than CSI, macOS support, cable, board size, hole positions and mass |
+| AOTS-009 | Camera | Arducam IMX219 8MP USB UVC camera module — **fixed-focus** variant | 1 | **Selected — not yet ordered** | Amazon: https://www.amazon.com/dp/B07YHK63DS ; $29.99 shown Nov 10, 2026; listing advertises 0.5 m USB cable and Mac OS support. Verify board dimensions, hole spacing, mass, and cable reach before CAD finalization |
 | AOTS-010 | 3D printing filament | Polymaker PolyLite PLA, black, 1.75 mm, 1 kg | 1 spool | Selected | For Prusa MK4S; verify makerspace's approved filament policy |
 
 ## Purchase and validation checklist
