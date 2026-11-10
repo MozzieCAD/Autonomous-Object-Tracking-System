@@ -18,14 +18,14 @@ This document records the components selected for the initial two-axis camera-tr
 | AOTS-006 | Jumper wires | ELEGOO 120-piece Dupont jumper assortment | 1 kit | Selected | Confirm suitable connector genders/lengths |
 | AOTS-007 | Fasteners | Fgruh 1,760-piece metric screw/nut assortment | 1 kit | Selected | Final thread sizes and lengths depend on CAD |
 | AOTS-008 | Servo extensions | Apex RC 150 mm 3-pin servo extension cables | 5-pack | Selected | Check cable reach during assembly |
-| AOTS-009 | Camera | Logitech USB webcam | 1 | Selected | Exact model not recorded; confirm macOS/OpenCV support, dimensions and mass |
+| AOTS-009 | Camera | Arducam B0196 / IMX219 USB UVC camera module (proposed; verify exact Amazon variant) | 1 | **Proposed replacement — not yet ordered** | Amazon: https://www.amazon.com/dp/B07YHK63DS ; confirm USB UVC rather than CSI, macOS support, cable, board size, hole positions and mass |
 | AOTS-010 | 3D printing filament | Polymaker PolyLite PLA, black, 1.75 mm, 1 kg | 1 spool | Selected | For Prusa MK4S; verify makerspace's approved filament policy |
 
 ## Purchase and validation checklist
 
 - [ ] Confirm final cart quantities and variants; save product URLs/ASINs and actual prices.
 - [ ] Confirm the servo is **positional**, not continuous-rotation.
-- [ ] Confirm webcam model and mass before finalizing the tilt bracket.
+- [ ] Verify the Arducam listing is a USB UVC camera (not CSI), with macOS/OpenCV compatibility; confirm mass, board and hole dimensions, and included USB cable before ordering.
 - [ ] Complete UNC Charlotte FDM printer training and confirm permitted PLA.
 - [ ] Verify the 5.5 × 2.5 mm barrel connection fits securely.
 - [ ] With the PCA9685 disconnected, measure power lead output with a multimeter: approximately **+5 V DC** and correct polarity.
@@ -33,6 +33,17 @@ This document records the components selected for the initial two-axis camera-tr
 - [ ] Power servo rail from the external 5 V supply; connect Pico 3.3 V to PCA9685 logic **VCC**, I²C SDA/SCL, and a common ground. Do not power servos from Pico 3.3 V.
 - [ ] Test one servo first, then both; monitor supply stability and heating.
 - [ ] Measure received servo and camera dimensions and update Fusion 360 mounts before printing.
+
+## Camera integration plan
+
+1. **Host vision:** Plug the USB UVC camera into the MacBook (use a USB-A-to-C adapter if necessary). The Pico does not process video or accept this USB camera directly.
+2. **Bench test:** Use Python/OpenCV to verify live video, resolution, frame rate, and colored-ball detection before mounting.
+3. **CAD reference:** Create a separate camera reference component in Fusion 360 using dimensions from the exact purchased module; do not assume mounting-hole coordinates.
+4. **Tilt mount:** Design a lightweight printed bracket with service access to USB connector, lens clearance, and strain relief. Avoid transferring cable tension to the camera board.
+5. **Cable routing:** Route the USB cable along the tilt and pan axes with slack for their intended travel; prevent snags, overbending, and contact with servo horns.
+6. **Mechanical verification:** Check MG90S torque with measured camera-plus-bracket mass, center-of-gravity offset, and acceleration; consider a bearing-supported pan axis.
+7. **Integration:** MacBook OpenCV calculates ball position and sends commands via USB serial to the Pico; Pico uses I²C to command the PCA9685 and two servos.
+8. **Testing:** Verify travel limits, tracking response, cable interference, vibration, and ball-release feedback before finalizing CAD.
 
 ## Scope and exclusions
 
